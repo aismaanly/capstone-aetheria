@@ -31,7 +31,7 @@ footer {
 
 .user-chat .chat-bubble {
     order: 1;
-    background: #FEFAF3; 
+    background: #FDF9FF; 
     color: #000;
 }
 
@@ -51,7 +51,7 @@ footer {
 }
 
 .AI-chat .chat-bubble {
-    background: #FEFAF3; 
+    background: #FDF9FF; 
     color: #333;
 }
 
