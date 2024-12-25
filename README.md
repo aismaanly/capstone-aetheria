@@ -1,10 +1,10 @@
 # Advance Capstone Project - Aetheria ✨
 ![Chatbot Aetheria](mainpage.gif)
 
-You can access the application through the following HTTP link:
+You can open the application via this HTTP link:
 **http://team5-alb-1402898587.ap-southeast-1.elb.amazonaws.com/**
 
-Alternatively, you can access the application locally by following the steps below:
+Alternatively, you can access the application with streamlit:
 [Click here to access the Chatbot Aetheria](https://capstone-aetheria.streamlit.app/)
 
 ## 📚 Overview
