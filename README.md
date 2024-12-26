@@ -5,7 +5,7 @@ You can open the application via this HTTP link:
 **http://team5-alb-1402898587.ap-southeast-1.elb.amazonaws.com/**
 
 Alternatively, you can access the application with streamlit:
-[Click here to access the Chatbot Aetheria](https://capstone-aetheria.streamlit.app/)
+**https://capstone-aetheria.streamlit.app/**
 
 ## 📚 Overview
 Welcome to the Aetheria Chatbot Repository! Aetheria is a helpful project for career planning, offering tips on resumes, CV guides to pass ATS, job recommendations based on skills and experience, as well as networking tips. This project supports users in achieving their career goals more effectively.
@@ -13,10 +13,10 @@ Welcome to the Aetheria Chatbot Repository! Aetheria is a helpful project for ca
 ## 🤖 Features
 - **Read File Capability**: Enables file uploads with basic explanations for easy understanding.
 - **Save Conversation**: Allows users to save and revisit past chats for reference.
+- **Conversation Management**: Allows switching between bot behaviors and retrieving past conversations using SQLAlchemy.
 - **Response Control**: Enables control over the length of responses by adjusting tokens per message.
 - **Customizable Creativity**: Provide temperature settings to fine-tune the chatbot's response creativity.
-- **User-Friendly Interface**: Developed using Streamlit to ensure an intuitive and engaging experience.
-- **Conversation Management**: Allows switching between bot behaviors and retrieving past conversations using SQLAlchemy.
+- **Chatbot Personalities**: Provides a variety of vibrant chatbot personalities to select from, enhancing the engagement of interactions.
 
 ## ⚙️ Installation
 1. Clone the Repository
@@ -34,11 +34,11 @@ To enable AI functionality in the app, you’ll need an API key from TogetherAI.
 Find the `.env.sample` file in the root directory of the project. Rename it to `.env`, open the file, and set the `TOGETHER_API_KEY` value to the API key you received from TogetherAI.  
 
 ## 💻 Usage
-1. **Start the Chatbot Application**:
+1. **Start the Chatbot Application**
     ```
     streamlit run main.py
     ```
-2. **Interact with the chatbot**:
+2. **Interact with the chatbot**
     - Launch the application in your browser.
     - Use the sidebar to start a new conversation or access a previously saved one.
     - Enter your messages in the input field and receive instant responses from the chatbot.
