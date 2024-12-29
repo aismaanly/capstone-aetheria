@@ -32,7 +32,7 @@ class ConversationManager:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.token_budget = token_budget
-        self.system_message = "Hello! I'm Aetheria, your AI assistant. How can I help you today?"
+        self.system_message = "Halo! Saya Aetheria, asisten konsultasi karir Anda. Ada yang bisa saya bantu hari ini?"
         self.additional_role_play = ""
         self.conversation_history = self.load_conversation_history() or [{"role": "system", "content": self.system_message}]
 
@@ -288,19 +288,19 @@ def start_new_chat():
     st.session_state['chats'].append({
         'chat_manager': ConversationManager(chat_id=chat_id),  
         'conversation_history': [],
-        'topic': 'New Chat'
+        'topic': 'Obrolan Baru'
     })  
     st.session_state['chat_selection'] = len(st.session_state['chats']) - 1
     st.session_state['file_used'] = False
 
 # Chat selection
 st.sidebar.title("Aetheria📝")
-if st.sidebar.button("New Chat"):
+if st.sidebar.button("Obrolan Baru"):
     start_new_chat()
 
 if len(st.session_state['chats']) > 0:
     chat_selection = st.sidebar.selectbox(
-        "Select a chat",
+        "💬Pilih Obrolan",
         range(len(st.session_state['chats'])),
         index=st.session_state['chat_selection'] if st.session_state['chat_selection'] is not None else 0,
         format_func=lambda x: st.session_state['chats'][x]['topic']
@@ -310,7 +310,7 @@ else:
     chat_selection = None
 
 # Button to delete the selected chat
-if chat_selection is not None and st.sidebar.button("Delete Selected Chat"):
+if chat_selection is not None and st.sidebar.button("Hapus Obrolan yang Dipilih"):
     delete_selected_chat(chat_selection)   
 
 # Function to summarize the conversation history
@@ -354,7 +354,7 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
             st.success("File successfully uploaded. It will be processed after you type a message.")
 
     # Chat input from the user
-    user_input = st.chat_input("Write a message")
+    user_input = st.chat_input("Tanyakan apa saja kepada Chatbot Aetheria!")
 
     # Call the chat manager to get a response from the AI
     if user_input:
@@ -384,33 +384,33 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
     # Option Chatbot with Sidebar
     with st.sidebar:
         st.divider()
-        st.write("Chatbot Personality")
-        set_custom_message = st.selectbox("Choose a Personality", ("Professional", "Friendly", "Humorous"), key="system_message_selectbox")
+        st.write("💡Kepribadian Chatbot")
+        set_custom_message = st.selectbox("Pilih Kepribadian", ("Profesional👔", "Ramah😊", "Humoris😂"), key="system_message_selectbox")
 
-        if set_custom_message == "Professional":
+        if set_custom_message == "Profesional👔":
             with open('src/professional.txt', 'r') as file:
                 custom_message = file.read()
-        elif set_custom_message == "Friendly":
+        elif set_custom_message == "Ramah😊":
             with open('src/friendly.txt', 'r') as file:
                 custom_message = file.read()
-        elif set_custom_message == "Humorous":
+        elif set_custom_message == "Humoris😂":
             with open('src/humorous.txt', 'r') as file:
                 custom_message = file.read()
 
-        additional_role_play = st.text_area("Looking to add some vibe?", key="additional_role_play")
+        additional_role_play = st.text_area("Ingin menambah suasana?", key="additional_role_play")
 
         def set_system_message():
             chat_manager.update_system_message(custom_message, additional_role_play)
 
-        if st.button("Vibe Up!", on_click=set_system_message):
+        if st.button("Coba Ubah!", on_click=set_system_message):
             pass
         
         st.divider()
-        st.write("Settings")
-        set_token = st.slider("Output Word Limit", min_value=10, max_value=500, value=DEFAULT_MAX_TOKENS, step=1, disabled=False)
+        st.write("⚙️Pengaturan")
+        set_token = st.slider("Batas Kata Obrolan", min_value=10, max_value=500, value=DEFAULT_MAX_TOKENS, step=1, disabled=False)
         chat_manager.max_tokens = set_token
 
-        set_temp = st.slider("Temperature", min_value=0.0, max_value=1.0, value=DEFAULT_TEMPERATURE, step=0.1, disabled=False)
+        set_temp = st.slider("Temperatur", min_value=0.0, max_value=1.0, value=DEFAULT_TEMPERATURE, step=0.1, disabled=False)
         chat_manager.temperature = set_temp
 
         # Ensure the system message is updated when the role is changed
@@ -421,4 +421,22 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
         st.write(f"**EC2 Instance ID**: {instance_id}")
 
 else:
-    st.write("No chat selected. Please start a new chat or select an existing one from the sidebar.")
+    st.markdown("### 🚀 Selamat Datang di Aetheria!")
+    st.markdown("#### Jelajahi Potensi Kariermu Bersama Aetheria")
+    st.markdown(
+        """
+        Selamat datang di **Aetheria**, teman setia untuk mendukung perjalanan kariermu! Baik kamu fresh graduate, pencari kerja, profesional, atau freelancer, aplikasi ini siap membantu meraih impianmu dengan berbagai fitur yang lengkap dan menarik! 🎯
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown("### ✨ Kenapa Pilih Aetheria?")
+    st.write(
+        """
+        - 💼 **Rekomendasi Pekerjaan:** Temukan peluang kerja sesuai keterampilan dan pengalamanmu.
+        - 🔗 **Strategi Networking:** Bangun jaringan profesional untuk memperluas kesempatanmu.
+        - 📁 **Analisis Dokumen:** Upload file resume atau CV, dapatkan feedback mendalam dan tips perbaikan.
+        - 💡 **Kepribadian Chatbot yang Fleksibel:** Pilih gaya komunikasi chatbot sesuai preferensimu.
+        - ☁️ **High Availability & Auto Scaling:** Nikmati performa terbaik dari infrastruktur berbasis AWS.
+        """
+    )
