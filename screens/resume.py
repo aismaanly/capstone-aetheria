@@ -62,9 +62,9 @@ def generate_pdf(data):
         contact_parts.append(
             f"<link href='{data['linkedin']}'><font color='blue'><u>{data['linkedin']}</u></font></link>"
         )
-    if data["github"]:
+    if data["portofolio"]:
         contact_parts.append(
-            f"<link href='{data['github']}'><font color='blue'><u>{data['github']}</u></font></link>"
+            f"<link href='{data['portofolio']}'><font color='blue'><u>{data['portofolio']}</u></font></link>"
         )
 
     if contact_parts:
@@ -87,7 +87,7 @@ def generate_pdf(data):
 
     # Sections
     sections = [
-        ("SUMMARY", "summary"),
+        ("PROFILE", "profile"),
         ("EDUCATION", "education"),
         ("EXPERIENCE", "experience"),
         ("ADDITIONAL INFORMATION", "additional_information"),
@@ -202,12 +202,13 @@ if "data" not in st.session_state:
         "email": "",
         "phone": "",
         "linkedin": "",
-        "github": "",
-        "summary": "",
+        "portofolio": "",
+        "profile": "",
         "education": [],
         "experience": [],
         "skills": "",
         "languages": "",
+        "certifications": "",
     }
 
 current_step = sac.steps(
@@ -216,7 +217,7 @@ current_step = sac.steps(
         sac.StepsItem(title="Pendidikan"),
         sac.StepsItem(title="Profesional"),
         sac.StepsItem(title="Skills"),
-        sac.StepsItem(title="Buat PDF CV"),
+        sac.StepsItem(title="Generate PDF"),
     ],
     size="xs",
     return_index=True,
@@ -237,9 +238,9 @@ if current_step == 0:
         with col4:
             linkedin = st.text_input("LinkedIn Profile URL", st.session_state.data["linkedin"])
         with col5:
-            github = st.text_input("Portfolio/Website URL", st.session_state.data["github"])
+            portofolio = st.text_input("Portfolio/Website URL", st.session_state.data["portofolio"])
 
-        summary = st.text_area("Deskripsi singkat tentang Anda", st.session_state.data["summary"])
+        profile = st.text_area("Deskripsi singkat tentang Anda", st.session_state.data["profile"])
         submit = st.form_submit_button("💾 Simpan & Lanjutkan")
 
         if submit:
@@ -250,21 +251,21 @@ if current_step == 0:
                 error = True
 
             if not is_valid_email(email):
-                st.error("Tolong masukkan alamat email yang benar.")
+                st.error("Tolong masukkan alamat email dengan benar.")
                 error = True
 
             if not is_valid_phone(phone):
                 st.error(
-                    "Tolong masukkan nomor telepon yang benar (10-14 digits, optionally starting with +)."
+                    "Tolong masukkan nomor handphone dengan benar (10-14 digits, opsional dimulai dengan +)."
                 )
                 error = True
 
             if linkedin and not is_valid_url(linkedin):
-                st.error("Tolong masukkan URL LinkedIn yang benar.")
+                st.error("Tolong masukkan URL LinkedIn dengan benar.")
                 error = True
 
-            if github and not is_valid_url(github):
-                st.error("Tolong masukkan URL GitHub yang benar.")
+            if portofolio and not is_valid_url(portofolio):
+                st.error("Tolong masukkan URL Portofolio dengan benar.")
                 error = True
 
             if not error:
@@ -274,8 +275,8 @@ if current_step == 0:
                         "email": email,
                         "phone": phone,
                         "linkedin": linkedin,
-                        "github": github,
-                        "summary": summary,
+                        "portofolio": portofolio,
+                        "profile": profile,
                     }
                 )
                 st.success("Informasi pribadi berhasil disimpan!")
@@ -325,7 +326,7 @@ elif current_step == 1:
                 st.error("Tolong masukkan nilai.")
                 error = True
             elif not is_valid_grade(grade):
-                st.error("Tolong masukkan nilai yang benar (integer or decimal number).")
+                st.error("Tolong masukkan nilai dengan benar (angka bulat atau desimal).")
                 error = True
 
             if not error:
@@ -395,19 +396,17 @@ elif current_step == 2:
 elif current_step == 3:
     with st.form("additional_info_form"):
         st.subheader("Informasi Tambahan")
-        st.write("Tambahkan informasi tambahan yang dipisahkan dengan koma.")
+        st.write("Tambahkan Skills Anda dengan dipisahkan dengan koma.")
         skills = st.text_area("Skills", st.session_state.data["skills"])
         languages = st.text_area("Bahasa", st.session_state.data["languages"])
-        certifications = st.text_area(
-            "Sertifikat", st.session_state.data["certifications"]
-        )
+        certifications = st.text_area("Sertifikat", st.session_state.data["certifications"])
         submit = st.form_submit_button("💾 Simpan Informasi Tambahan")
 
         if submit:
             st.session_state.data["skills"] = skills
             st.session_state.data["languages"] = languages
             st.session_state.data["certifications"] = certifications
-            st.success("Additional information saved successfully!")
+            st.success("Informasi Tambahan berhasil disimpan!")
 
 elif current_step == 4:
     st.subheader("Generate PDF")
