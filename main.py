@@ -5,7 +5,7 @@ load_dotenv()
 
 st.set_page_config(
     page_title="Aetheria",
-    page_icon="assets/ai_icon.png",
+    page_icon="assets/page_icon.png",
 )
 
 welcome_page = st.Page(
