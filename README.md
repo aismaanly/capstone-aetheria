@@ -7,13 +7,6 @@ You can open the application via this HTTP link:
 Alternatively, you can access the application with streamlit:
 **https://capstone-aetheria.streamlit.app/**
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Appendix](#appendix)
-
 ## 📚 Overview
 Welcome to the Aetheria Chatbot Repository! Aetheria is a career consultation assistant designed to help you improve your chances of success in the job market. This app offers a variety of services, including creating CV ATS friendly, interview practice, job recommendations based on skills and experience, and networking strategies.
 
