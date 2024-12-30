@@ -1,4 +1,4 @@
-# Advance Capstone Project - Aetheria ✨
+# Advance Capstone Project - Aetheria 👾✨
 ![Chatbot Aetheria](mainpage.gif)
 
 You can open the application via this HTTP link:
@@ -32,7 +32,7 @@ python -m venv env
 ```
 3. Activate the Virtual Environment
 ```
-.\env\Scripts\activate    # On Linux, use `source venv/bin/activate`
+.\env\Scripts\activate    # On Linux, use `source env/bin/activate`
 ```
 4. Install the required packages
 ```
@@ -61,7 +61,7 @@ Find the `.env.example` file in the root directory of the project. Rename it to 
         - Add your academic qualifications, including degrees and institutions.
         - List your past job roles, responsibilities, and achievements.
         - Provide a list of relevant skills tailored to the job you're seeking.
-    - In the final step, click "Generate Resume PDF" to create and download your CV ATS.
+        - In the final step, click "Generate Resume PDF" to create and download your CV ATS.
 
 ## 📖 Appendix 
 - **Streamlit**: A framework designed to build interactive web applications directly from Python scripts. 
