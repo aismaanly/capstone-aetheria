@@ -8,7 +8,7 @@ st.markdown("### 👾 Selamat Datang di Aetheria!")
 
 st.markdown("""
 Aetheria adalah asisten konsultasi karir yang dirancang untuk membantu Anda dalam merencanakan karir dan mencapai tujuan profesional. 
-Aplikasi ini menawarkan berbagai fitur untuk mempermudah pencarian kerja, termasuk pembuatan resume yang sesuai dengan standar ATS, 
+Aplikasi ini digunakan untuk mempermudah pencarian kerja, termasuk pembuatan resume yang sesuai dengan standar ATS, 
 latihan wawancara, rekomendasi pekerjaan, dan tips networking.
 """)
 

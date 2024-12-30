@@ -414,4 +414,4 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
 
 else:
     st.subheader("👾 Chatbot Aetheria!")
-    st.markdown("Silakan mulai obrolan baru atau pilih obrolan yang ada di sidebar.🚀")
+    st.markdown("👈 Silakan mulai obrolan baru atau pilih obrolan yang ada di sidebar.")
