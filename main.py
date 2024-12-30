@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 welcome_page = st.Page(
-    page="screens/welcome.py",
+    page="screens/home.py",
     title="Beranda",
     icon=":material/home:",
     default=True,
