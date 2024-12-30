@@ -1,9 +1,6 @@
 import streamlit as st
 
-# Create three columns
 col1, col2, col3 = st.columns([1, 3, 1])
-
-# Displaying images in the center column
 with col2:
     st.image("assets/cover_aetheria.png")
 
