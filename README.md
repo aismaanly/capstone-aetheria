@@ -64,10 +64,10 @@ Find the `.env.example` file in the root directory of the project. Rename it to 
 4. **Create CV ATS friendly**
     - Navigate to the "Buat CV" section in the sidebar.
     - Follow the step-by-step process to input your information:
-        1. Enter your name, contact details, and other personal information.
-        2. Add your academic qualifications, including degrees and institutions.
-        3. List your past job roles, responsibilities, and achievements.
-        4. Provide a list of relevant skills tailored to the job you're seeking.
+        - Enter your name, contact details, and other personal information.
+        - Add your academic qualifications, including degrees and institutions.
+        - List your past job roles, responsibilities, and achievements.
+        - Provide a list of relevant skills tailored to the job you're seeking.
     - In the final step, click "Generate Resume PDF" to create and download your CV ATS.
 
 ## 📖 Appendix 
