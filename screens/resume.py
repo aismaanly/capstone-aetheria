@@ -213,9 +213,9 @@ if "data" not in st.session_state:
 
 current_step = sac.steps(
     items=[
-        sac.StepsItem(title="Info Pribadi"),
-        sac.StepsItem(title="Pendidikan"),
-        sac.StepsItem(title="Profesional"),
+        sac.StepsItem(title="Profile"),
+        sac.StepsItem(title="Education"),
+        sac.StepsItem(title="Experience"),
         sac.StepsItem(title="Skills"),
         sac.StepsItem(title="Generate PDF"),
     ],
@@ -304,14 +304,14 @@ elif current_step == 1:
                 min_value=datetime.date(1900, 1, 1),
                 max_value=datetime.date(2100, 1, 1),
             )
-        grade = st.text_input("Grade (%)")
+        grade = st.text_input("Nilai (%)")
         submit = st.form_submit_button("➕ Tambah Pendidikan")
 
         if submit:
             error = False
 
             if not school:
-                st.error("Tolong masukkan nama sekolah.")
+                st.error("Tolong masukkan nama sekolah/universitas.")
                 error = True
 
             if not course:
@@ -361,7 +361,7 @@ elif current_step == 2:
                 min_value=datetime.date(1900, 1, 1),
                 max_value=datetime.date(2100, 1, 1),
             )
-        experience_summary = st.text_area("Experience")
+        experience_summary = st.text_area("Aktivitas dan Pencapaian")
         submit = st.form_submit_button("➕ Tambah Pengalaman")
 
         if submit:
@@ -380,7 +380,7 @@ elif current_step == 2:
                 error = True
 
             if not experience_summary:
-                st.error("Tolong tambahkan deskripsi singkat (5 points)")
+                st.error("Tolong tambahkan deskripsi singkat aktivitas dan pencapaian(5 points)")
                 error = True
 
             if not error:
@@ -396,7 +396,7 @@ elif current_step == 2:
 elif current_step == 3:
     with st.form("additional_info_form"):
         st.subheader("Informasi Tambahan")
-        st.write("Tambahkan Skills Anda dengan dipisahkan dengan koma.")
+        st.write("Tambahkan Informasi Tambahan Anda dengan dipisahkan dengan koma.")
         skills = st.text_area("Skills", st.session_state.data["skills"])
         languages = st.text_area("Bahasa", st.session_state.data["languages"])
         certifications = st.text_area("Sertifikat", st.session_state.data["certifications"])
