@@ -343,7 +343,7 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
     if uploaded_file and not st.session_state['file_used']:
         file_content = read_file(uploaded_file)
         if file_content:
-            st.success("File successfully uploaded. It will be processed after you type a message.")
+            st.success("File berhasil diunggah. File akan diproses setelah Anda mengetik pesan..")
 
     # Chat input from the user
     user_input = st.chat_input("Tanyakan apa saja kepada Chatbot Aetheria!")
