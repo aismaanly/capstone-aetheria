@@ -343,7 +343,7 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
     if uploaded_file and not st.session_state['file_used']:
         file_content = read_file(uploaded_file)
         if file_content:
-            st.success("File berhasil diunggah. File akan diproses setelah Anda mengetik pesan..")
+            st.success("File berhasil diunggah. File akan diproses setelah Anda mengetik pesan.")
 
     # Chat input from the user
     user_input = st.chat_input("Tanyakan apa saja kepada Chatbot Aetheria!")
@@ -373,7 +373,7 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
         elif message["role"] == "assistant":  
             st.markdown(get_chat_message(message["content"], align="left"), unsafe_allow_html=True)
 
-    # Option Chatbot with Sidebar
+    # Chatbot Personalities
     with st.sidebar:
         st.divider()
         st.write("💡Kepribadian Chatbot")
@@ -398,6 +398,8 @@ if chat_selection is not None and chat_selection < len(st.session_state['chats']
             pass
         
         st.divider()
+
+        # Settings
         st.write("⚙️Pengaturan")
         set_token = st.slider("Batas Kata Obrolan", min_value=10, max_value=500, value=DEFAULT_MAX_TOKENS, step=1, disabled=False)
         chat_manager.max_tokens = set_token
