@@ -17,10 +17,10 @@ with st.expander("**✨ Fitur Menarik Aplikasi Aetheria**", expanded=True):
         "📁 Bisa mengunggah file dan memberikan penjelasan yang mudah dimengerti",
         "💬 Bisa mengakses percakapan sebelumnya, jadi Anda tidak perlu khawatir kehilangan informasi",
         "✂️ Bisa mengatur panjang jawaban chatbot sesuai dengan kebutuhan, seperti lebih singkat atau lebih detail",
-        "🎭 Tingkat kreativitas chatbot bisa disesuaikan, jadi jawabannya bisa lebih bervariasi",
-        "💡 Berbagai pilihan kepribadian chatbot yang bisa dipilih untuk membuat percakapan lebih menarik",
-        "☁️ Aplikasi menggunakan teknologi AWS, jadi selalu siap digunakan tanpa gangguan, bahkan saat banyak orang menggunakan",
+        "🎭 Bisa menyesuaikan tingkat kreativitas chatbot, jadi respon chatbot lebih bervariasi",
+        "💡 Bisa memilih berbagai pilihan kepribadian chatbot untuk membuat percakapan lebih menarik",
         "📄 Bisa membuat resume dalam format PDF setelah Anda selesai mengisi data, siap dibagikan atau dicetak",
+        "☁️ Aplikasi menggunakan teknologi AWS, jadi selalu siap digunakan tanpa gangguan, bahkan saat banyak orang menggunakan",
     ]
     for feature in features:
         st.markdown(f"- {feature}")
@@ -46,9 +46,9 @@ with st.expander("**📝 Cara Menggunakan Fitur Pembuatan CV**", expanded=True):
 
     Contoh:
     ```
-    - Mengembangkan fitur produk baru yang meningkatkan keterlibatan pengguna sebesar 25%
-    - Memimpin tim beranggotakan 5 pengembang dalam lingkungan Agile
-    - Mengimplementasikan pipeline CI/CD, mengurangi waktu deployment sebesar 40%
+    - Memimpin tim beranggotakan 5 developer dalam lingkungan Amazon Web Service
+    - Mengembangkan fitur produk baru yang meningkatkan keterlibatan pengguna sebesar 70%
+    - Mengimplementasikan pipeline CI/CD, mengurangi waktu deployment sebesar 75%
     ```
     """)
 
