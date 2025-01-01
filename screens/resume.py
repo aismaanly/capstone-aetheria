@@ -18,7 +18,6 @@ import datetime, re
 def format_date(date):
     return date.strftime("%b %Y")
 
-
 def generate_pdf(data):
     buffer = BytesIO()
     doc = SimpleDocTemplate(
@@ -170,21 +169,17 @@ def generate_pdf(data):
     buffer.seek(0)
     return buffer
 
-
 def is_valid_email(email):
     pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
     return re.match(pattern, email) is not None
-
 
 def is_valid_phone(phone):
     pattern = r"^\+?[0-9]{10,14}$"
     return re.match(pattern, phone) is not None
 
-
 def is_valid_url(url):
     pattern = r"^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$"
     return re.match(pattern, url) is not None
-
 
 def is_valid_grade(grade):
     try:

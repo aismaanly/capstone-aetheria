@@ -38,8 +38,8 @@ with st.expander("**📝 Cara Menggunakan Fitur Pembuatan CV**", expanded=True):
     st.markdown("""
     1. **Informasi Pribadi**: Masukkan data pribadi Anda seperti nama, informasi kontak, dan deskripsi singkat.
     2. **Pendidikan**: Tambahkan latar belakang pendidikan Anda. Anda bisa menambahkan beberapa inputan.
-    3. **Profesional**: Tambahkan pengalaman kerja Anda. Gunakan bullet points untuk format yang lebih rapi.
-    4. **Skills**: Masukkan skills, bahasa, dan sertifikasi yang Anda miliki.
+    3. **Pengalaman Kerja**: Tambahkan pengalaman kerja Anda. Gunakan bullet points untuk format yang lebih rapi.
+    4. **Informasi Tambahan**: Masukkan skills, bahasa, dan sertifikasi yang Anda miliki.
     5. **Generate PDF**: Review informasi Anda dan buat resume dalam format PDF.
 
     **Tips**: Saat memasukkan pengalaman Anda, gunakan '- ' (strip diikuti spasi) di awal setiap poin baru untuk membuat bullet points di resume PDF Anda.
